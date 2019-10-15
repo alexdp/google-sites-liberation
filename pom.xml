@@ -10,20 +10,14 @@
   <groupId>com.google.gdata</groupId>
   <artifactId>google-sites-liberation</artifactId>
   <name>Google Sites Liberation</name>
-  <version>1.0.6</version>
-  <repositories>
-    <repository>
-      <id>local</id>
-      <url>file://repository</url>
-    </repository>
-  </repositories>
+  <version>1.0.7</version>
   <build>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
       <plugin>
@@ -58,6 +52,8 @@
       <groupId>com.google.gdata</groupId>
       <artifactId>gdata-sites-meta</artifactId>
       <version>2.0</version>
+      <scope>system</scope>
+	  <systemPath>${basedir}/repository/com/google/gdata/gdata-sites-meta/2.0/gdata-sites-meta-2.0.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>com.google.gdata</groupId>
@@ -67,7 +63,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-oauth2</artifactId>
-      <version>v2-rev93-1.20.0</version>
+      <version>v2-rev151-1.25.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.inject</groupId>
@@ -79,6 +75,8 @@
       <artifactId>jtidy</artifactId>
       <version>r820</version>
       <optional>false</optional>
+      <scope>system</scope>
+	  <systemPath>${basedir}/repository/jtidy/jtidy/r820/jtidy-r820.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>commons-lang</groupId>
