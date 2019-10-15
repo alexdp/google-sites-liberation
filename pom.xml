@@ -7,7 +7,7 @@
     <artifactId>google</artifactId>
     <version>1</version>
   </parent>
-  <groupId>com.google.gdata</groupId>
+  <groupId>com.google.sites</groupId>
   <artifactId>google-sites-liberation</artifactId>
   <name>Google Sites Liberation</name>
   <version>1.0.7</version>
