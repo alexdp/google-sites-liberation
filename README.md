@@ -2,7 +2,6 @@
 
 This is an import/export tool for [Google Sites](http://sites.google.com/).  Using [HTML Microformats](http://microformats.org/) it generates an XHTML version of Sites content suitable for offline browsing and simple HTTP hosting, which is also able to be losslessly imported back into sites.
 
-Download the version [1.0.6](https://sih4sing5hong5.github.io/google-sites-liberation/jar/google-sites-liberation-1.0.6-jar-with-dependencies.jar) and execute it now!
 
 ![http://google-sites-liberation.googlecode.com/files/gui.png](http://google-sites-liberation.googlecode.com/files/gui.png)
 
@@ -12,11 +11,11 @@ The Sites Liberation import/export tool uses the Sites GData API to allow users 
 
 ### Simple Execution
 
-Download the version [1.0.6](https://sih4sing5hong5.github.io/google-sites-liberation/jar/google-sites-liberation-1.0.6-jar-with-dependencies.jar) now! The tool has been packaged as an executable jar.  If [Java](http://java.sun.com/) is installed, just **double-click on it**.
+Clone ptoject and compile it with : mvn clean compile package
 
-You can run it in command line, too.
+Then, you can run it in command line from the target/ folder : 
 ```bash
-java -jar google-sites-liberation-1.0.6-jar-with-dependencies.jar
+java -jar google-sites-liberation-1.0.7-jar-with-dependencies.jar
 ```
 
 ### Advanced Execution
@@ -66,7 +65,7 @@ The parent link and pageName elements in the GData feeds are not embedded in the
   Note:  This project is built using Maven (http://maven.apache.org/).
   
 ### REQUIREMENTS
-  This project is built using Java 1.5 or later.  All other dependencies are managed by Maven.
+  This project is built using Java 1.8 or later.  All other dependencies are managed by Maven.
 
 #### Preparation with Ubuntu 14.04
 ```
