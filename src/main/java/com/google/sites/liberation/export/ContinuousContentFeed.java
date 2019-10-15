@@ -16,8 +16,16 @@
 
 package com.google.sites.liberation.export;
 
-import static com.google.gdata.util.common.base.Preconditions.checkNotNull;
 import static com.google.gdata.util.common.base.Preconditions.checkArgument;
+import static com.google.gdata.util.common.base.Preconditions.checkNotNull;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.Iterators;
@@ -28,13 +36,6 @@ import com.google.gdata.data.sites.BaseContentEntry;
 import com.google.gdata.util.ServiceException;
 import com.google.gdata.util.common.base.Pair;
 import com.google.sites.liberation.util.EntryProvider;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.Iterator;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Provides a continuous iterable of entries even if the results of 
@@ -101,7 +102,7 @@ final class ContinuousContentFeed implements Iterable<BaseContentEntry<?>> {
      * Constructs a new iterator for this {@code ContinuousContentFeed}.
      */
     FeedIterator() {
-      currentItr = Iterators.emptyIterator();
+      currentItr = Collections.emptyIterator();
       index = 1;
     }
 
@@ -133,7 +134,7 @@ final class ContinuousContentFeed implements Iterable<BaseContentEntry<?>> {
       Query query = new ContentQuery(feedUrl);
       try {
         int numReturned = 0;
-        Iterator<BaseContentEntry<?>> itr = Iterators.emptyIterator();
+        Iterator<BaseContentEntry<?>> itr = Collections.emptyIterator();
         List<BaseContentEntry<?>> entries;
         do {
           query.setStartIndex(start + numReturned);
@@ -155,7 +156,7 @@ final class ContinuousContentFeed implements Iterable<BaseContentEntry<?>> {
       String message = "Error retrieving response from query.";
       LOGGER.log(Level.WARNING, message, e);
       if (num == 1) {
-        Iterator<BaseContentEntry<?>> itr = Iterators.emptyIterator();
+        Iterator<BaseContentEntry<?>> itr = Collections.emptyIterator();
         return Pair.of(itr, 1);
       } else {
         int num1 = num/2;
